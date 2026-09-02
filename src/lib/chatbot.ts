@@ -8,8 +8,16 @@ export const quickQuestions = [
   "Bagaimana cara mencari tempat PKL?",
 ];
 
+import { getDb } from "./mock-store";
+
 export function getAssistantReply(question: string) {
   const q = question.toLowerCase();
+  // Knowledge base yang dikelola admin (/admin/ai-assistant) diperiksa lebih dulu.
+  const kb = getDb().knowledgeBase.find((entry) => {
+    const key = entry.question.toLowerCase();
+    return q.includes(key) || key.includes(q);
+  });
+  if (kb) return kb.answer;
   if (q.includes("ppdb") || q.includes("daftar"))
     return "Informasi PPDB mencakup jalur pendaftaran, persyaratan, jadwal, pilihan jurusan, dan alur pendaftaran. Buka halaman PPDB untuk panduan lengkap dan tombol “Daftar Sekarang”.";
   if (q.includes("jurusan"))
