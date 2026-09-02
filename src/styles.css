@@ -99,6 +99,12 @@
   --brand-lavender: oklch(0.93 0.045 305);
   --brand-gold: oklch(0.79 0.12 83);
   --brand-gold-soft: oklch(0.95 0.055 83);
+  --status-pending: oklch(0.58 0.11 83);
+  --status-pending-soft: oklch(0.95 0.055 83);
+  --status-approved: oklch(0.52 0.11 155);
+  --status-approved-soft: oklch(0.945 0.045 155);
+  --status-rejected: oklch(0.53 0.17 22);
+  --status-rejected-soft: oklch(0.95 0.035 22);
   --nav-foreground: oklch(0.99 0.004 305);
   --nav-muted: oklch(0.88 0.035 305);
   --gradient-hero: linear-gradient(120deg, oklch(0.2 0.11 305), oklch(0.42 0.2 305));
