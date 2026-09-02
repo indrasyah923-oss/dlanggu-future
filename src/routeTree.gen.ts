@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
+import { Route as CareerCenterRouteImport } from './routes/career-center'
+import { Route as PklCareerCenterRouteImport } from './routes/pkl-career-center'
+import { Route as PpdbRouteImport } from './routes/ppdb'
+import { Route as ProdukUnggulanRouteImport } from './routes/produk-unggulan'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiAssistantRoute = AiAssistantRouteImport.update({
+  id: '/ai-assistant',
+  path: '/ai-assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareerCenterRoute = CareerCenterRouteImport.update({
+  id: '/career-center',
+  path: '/career-center',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PklCareerCenterRoute = PklCareerCenterRouteImport.update({
+  id: '/pkl-career-center',
+  path: '/pkl-career-center',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PpdbRoute = PpdbRouteImport.update({
+  id: '/ppdb',
+  path: '/ppdb',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdukUnggulanRoute = ProdukUnggulanRouteImport.update({
+  id: '/produk-unggulan',
+  path: '/produk-unggulan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/career-center': typeof CareerCenterRoute
+  '/pkl-career-center': typeof PklCareerCenterRoute
+  '/ppdb': typeof PpdbRoute
+  '/produk-unggulan': typeof ProdukUnggulanRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/career-center': typeof CareerCenterRoute
+  '/pkl-career-center': typeof PklCareerCenterRoute
+  '/ppdb': typeof PpdbRoute
+  '/produk-unggulan': typeof ProdukUnggulanRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-assistant': typeof AiAssistantRoute
+  '/career-center': typeof CareerCenterRoute
+  '/pkl-career-center': typeof PklCareerCenterRoute
+  '/ppdb': typeof PpdbRoute
+  '/produk-unggulan': typeof ProdukUnggulanRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ai-assistant'
+    | '/career-center'
+    | '/pkl-career-center'
+    | '/ppdb'
+    | '/produk-unggulan'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ai-assistant'
+    | '/career-center'
+    | '/pkl-career-center'
+    | '/ppdb'
+    | '/produk-unggulan'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-assistant'
+    | '/career-center'
+    | '/pkl-career-center'
+    | '/ppdb'
+    | '/produk-unggulan'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiAssistantRoute: typeof AiAssistantRoute
+  CareerCenterRoute: typeof CareerCenterRoute
+  PklCareerCenterRoute: typeof PklCareerCenterRoute
+  PpdbRoute: typeof PpdbRoute
+  ProdukUnggulanRoute: typeof ProdukUnggulanRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-assistant': {
+      id: '/ai-assistant'
+      path: '/ai-assistant'
+      fullPath: '/ai-assistant'
+      preLoaderRoute: typeof AiAssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/career-center': {
+      id: '/career-center'
+      path: '/career-center'
+      fullPath: '/career-center'
+      preLoaderRoute: typeof CareerCenterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pkl-career-center': {
+      id: '/pkl-career-center'
+      path: '/pkl-career-center'
+      fullPath: '/pkl-career-center'
+      preLoaderRoute: typeof PklCareerCenterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ppdb': {
+      id: '/ppdb'
+      path: '/ppdb'
+      fullPath: '/ppdb'
+      preLoaderRoute: typeof PpdbRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produk-unggulan': {
+      id: '/produk-unggulan'
+      path: '/produk-unggulan'
+      fullPath: '/produk-unggulan'
+      preLoaderRoute: typeof ProdukUnggulanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiAssistantRoute: AiAssistantRoute,
+  CareerCenterRoute: CareerCenterRoute,
+  PklCareerCenterRoute: PklCareerCenterRoute,
+  PpdbRoute: PpdbRoute,
+  ProdukUnggulanRoute: ProdukUnggulanRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
