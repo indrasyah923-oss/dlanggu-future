@@ -66,6 +66,12 @@
   --color-brand-gold-soft: var(--brand-gold-soft);
   --color-nav-foreground: var(--nav-foreground);
   --color-nav-muted: var(--nav-muted);
+  --color-status-pending: var(--status-pending);
+  --color-status-pending-soft: var(--status-pending-soft);
+  --color-status-approved: var(--status-approved);
+  --color-status-approved-soft: var(--status-approved-soft);
+  --color-status-rejected: var(--status-rejected);
+  --color-status-rejected-soft: var(--status-rejected-soft);
   --background-image-hero: var(--gradient-hero);
 }
 
